@@ -72,10 +72,29 @@ function generateBreed(){
 // ------------------------------------------
 select.addEventListener('change', generateBreed);
 card.addEventListener('click', generateBreed);
+form.addEventListener('submit', postData);
 
 
 // ------------------------------------------
 //  POST DATA
 // ------------------------------------------
+function postData(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const comment = document.getElementById('comment').value;
 
+  const config = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, comment})
+  };
+
+
+  fetch('https://jsonplaceholder.typicode.com/comments', config)
+    .then(checkStatus)  
+    .then(res => res.json())
+    .then(data => console.log(data))
+}
 
