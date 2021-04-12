@@ -954,7 +954,8 @@ header {
   .card img {
     border-radius: 4px;
     margin-bottom: 2.25rem;
-    cursor: pointer; }
+    cursor: pointer;
+    max-width: 100%; }
     @media (max-width: 720px) {
       .card img {
         width: 100%; } }

@@ -20,7 +20,8 @@ Promise.all([
 ])
   .then(data => {
     generateOptions(data[0].message);
-    generateImage(data[1].message);
+    generateBreed();
+    //generateImage(data[1].message);
   });
 
 
@@ -53,6 +54,7 @@ function generateOptions(data){
 
 function generateBreed(){
   const breed = select.value;
+  card.innerHTML = '<img><p></p';
   const img = document.querySelector('.card img');
   const p = document.querySelector('.card p');
 
